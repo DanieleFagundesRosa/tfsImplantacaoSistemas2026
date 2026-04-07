@@ -1,0 +1,7 @@
+thresholds:
+  response_time:
+    warning: 1000ms
+    critical: 5000ms
+  uptime:
+    warning: 95%
+    critical: 90%

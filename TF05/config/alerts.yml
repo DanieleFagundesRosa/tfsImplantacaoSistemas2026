@@ -1,0 +1,9 @@
+alerts:
+  email:
+    enabled: false # Mantenha false para testes locais
+    smtp_server: smtp.gmail.com
+    recipients:
+      - admin@example.com
+  webhook:
+    enabled: true
+    url: https://hooks.slack.com/services/exemplo

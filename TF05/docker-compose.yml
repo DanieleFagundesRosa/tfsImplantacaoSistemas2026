@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  dashboard:
+    build: ./dashboard
+    ports: ["3000:80"]
+    networks: [monitor-net]
+  api:
+    build: ./api
+    volumes: ["./config:/app/config"]
+    ports: ["5000:5000"]
+    networks: [monitor-net]
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+      MYSQL_USER: bloguser
+      MYSQL_PASSWORD: blogpass
+    networks: [monitor-net]
+networks:
+  monitor-net:
+    driver: bridge
